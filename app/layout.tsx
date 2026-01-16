@@ -7,6 +7,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { shadcn } from "@clerk/themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        theme: shadcn,
+      }}>
       <html lang="zh-TW" className="dark" suppressHydrationWarning>
         <body className="antialiased">
           <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
